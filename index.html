@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beatriz Briceño-Picón | Familia, Educación y Legado</title>
     
-    <!-- FAVICON BBI (Fondo naranja pastel, letras blancas, 100% código) -->
+    <!-- FAVICON BBI -->
     <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI0ZEQkE3NCIgcng9IjIwIi8+PHRleHQgeD0iNTAiIHk9IjY1IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNDAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjRkZGRkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5CQkk8L3RleHQ+PC9zdmc+" type="image/svg+xml">
     
     <!-- Google Fonts -->
@@ -19,7 +19,7 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
-    <!-- Custom Tailwind Configuration (Naranja Pálido y Amarillo Pastel) -->
+    <!-- Custom Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -28,7 +28,7 @@
                         paleOrange: { DEFAULT: '#FDBA74', dark: '#F97316', light: '#FFEDD5' },
                         pastelYellow: { DEFAULT: '#FEF08A', hover: '#FDE047', dark: '#EAB308' },
                         charcoal: { 800: '#333333', 900: '#1A1A1A' },
-                        softSand: '#FFFDF9' /* Fondo súper cálido */
+                        softSand: '#FFFDF9'
                     },
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
@@ -40,19 +40,30 @@
         }
     </script>
     
-    <!-- CSS Adicional para la interactividad de JS -->
+    <!-- CSS Adicional -->
     <style>
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         
-        /* Clases para animación con JavaScript */
+        /* Animación Reveal */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
         
-        /* Animación de las pestañas */
+        /* Pestañas */
         .tab-content { display: none; animation: fadeIn 0.5s; }
         .tab-content.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ANIMACIÓN DEL OJO PARPADEANDO */
+        @keyframes blink-eye {
+            0%, 90%, 100% { transform: scaleY(1); }
+            95% { transform: scaleY(0.1); } /* El ojo se cierra haciéndose plano */
+        }
+        .animate-blink {
+            display: inline-block;
+            animation: blink-eye 4s infinite;
+            transform-origin: center;
+        }
     </style>
 </head>
 <body class="bg-softSand text-charcoal-900 font-sans antialiased selection:bg-paleOrange-dark selection:text-white flex flex-col min-h-screen">
@@ -60,7 +71,6 @@
     <!-- NAVIGATION BAR -->
     <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md border-b border-paleOrange-light transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 lg:px-12 h-24 flex items-center justify-between">
-            
             <div class="logo-container flex items-center">
                 <a href="index.html" class="flex items-center text-paleOrange-dark hover:text-paleOrange transition-colors font-bold uppercase tracking-widest text-xs">
                     <i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i>
@@ -100,31 +110,8 @@
                 Beatriz Briceño-Picón
             </h1>
             <p class="text-lg md:text-2xl font-light text-charcoal-800 max-w-3xl mx-auto leading-relaxed">
-                Entrelazando personas e instituciones para mantener vigente un legado de valores desde el núcleo familiar hasta la juventud.
+                Entrelazando a las personas para mantener vigente un legado de valores, desde el núcleo de la familia hasta nuestra juventud.
             </p>
-        </div>
-    </section>
-
-    <!-- INTRO / PERFIL -->
-    <section id="perfil" class="py-20 bg-white reveal">
-        <div class="max-w-5xl mx-auto px-6 lg:px-12">
-            <div class="flex flex-col md:flex-row gap-12 items-center">
-                <div class="w-full md:w-1/3 shrink-0">
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-paleOrange translate-x-3 translate-y-3 rounded-2xl"></div>
-                        <img src="Bea.png" alt="Beatriz Briceño-Picón" class="relative z-10 w-full max-w-[280px] mx-auto rounded-2xl shadow-xl object-cover aspect-[4/5]" onerror="this.src='https://via.placeholder.com/400x500?text=Beatriz'">
-                    </div>
-                </div>
-                <div class="w-full md:w-2/3 space-y-6">
-                    <i data-lucide="quote" class="w-12 h-12 text-paleOrange mb-2"></i>
-                    <p class="text-lg md:text-xl text-charcoal-800 leading-relaxed font-medium">
-                        "Mi empeño ha sido fortalecer nuestra venezolanidad desde la mesa familiar, la escuela, la universidad y los medios de comunicación social."
-                    </p>
-                    <p class="text-base text-gray-600 leading-relaxed">
-                        Este esfuerzo constante busca alcanzar un humanismo integral y solidario, abierto a la trascendencia que nuestro mundo reclama. Solo uniendo la formación intelectual con el corazón, podemos educar verdaderos ciudadanos.
-                    </p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -132,33 +119,34 @@
     <section id="cocina" class="py-24 bg-softSand border-t border-paleOrange-light reveal">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="text-center space-y-4 mb-16">
-                <span class="text-sm font-bold tracking-widest text-paleOrange-dark uppercase">Rompiendo Paradigmas</span>
-                <h2 class="font-title text-3xl sm:text-4xl font-extrabold text-charcoal-900 uppercase">La Cocina: El Eje de la Vida</h2>
+                <span class="text-sm font-bold tracking-widest text-paleOrange-dark uppercase">El Corazón Integrador</span>
+                <h2 class="font-title text-3xl sm:text-4xl font-extrabold text-charcoal-900 uppercase">La Cocina Abierta</h2>
                 <div class="w-16 h-1 bg-pastelYellow mx-auto rounded-full"></div>
             </div>
 
             <div class="flex flex-col lg:flex-row gap-12 items-center bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-paleOrange-light">
-                <!-- Imagen de cocina abierta/integrada -->
-                <div class="w-full lg:w-1/2 aspect-[4/3] bg-gray-200 rounded-2xl overflow-hidden shrink-0 shadow-inner relative group">
-                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1000&auto=format&fit=crop" alt="Cocina abierta e integrada familiar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <!-- Imagen de cocina abierta proporcionada -->
+                <div class="w-full lg:w-1/2 aspect-[4/3] rounded-2xl overflow-hidden shrink-0 shadow-inner relative group">
+                    <img src="image_d94ad2.jpg" alt="Cocina de concepto abierto" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 </div>
                 
                 <div class="w-full lg:w-1/2 space-y-6">
-                    <h3 class="text-2xl font-bold text-charcoal-900 font-title">¿Disfrutas o vas tirando?</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        En las cocinas de nuestras casas es donde se cuecen las habas y mil y una historias familiares. Unas tristes, otras alegres, como la vida misma. La cocina no es un cuarto cerrado; es el <strong>corazón integrador</strong> de la familia.
+                    <h3 class="text-3xl font-bold text-charcoal-900 font-title">¿Realmente disfrutas tu matrimonio o solo sobrevives?</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        En la cocina ya no solo se prepara comida; es un espacio abierto donde se amasan mil y una historias familiares. Unas tristes, otras alegres. La cocina rompió sus paredes para convertirse en el verdadero <strong>eje y corazón integrador</strong> de la familia.
                     </p>
-                    <p class="text-gray-600 leading-relaxed">
-                        Lo importante es conseguir la armonía, que en casa se viva bien y, en definitiva, disfrutar del matrimonio. Y tú, ¿disfrutas de tu matrimonio o vas tirando? ¿Os lo pasáis bien u os aguantáis?
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        Lo vital es lograr la armonía. Que en casa se respire paz. Y tú, ¿te diviertes en tu matrimonio o solo dejas pasar los días? ¿Se ríen juntos o simplemente se soportan?
                     </p>
-                    <div class="p-6 bg-paleOrange-light/50 border-l-4 border-paleOrange rounded-r-lg mt-4">
-                        <p class="text-charcoal-800 font-medium italic">
-                            "El tema no es aguantar, ni ir tirando, hay que 'pasarlo de muerte'. Que vuestros hijos y sus amigos digan: 'Yo quiero ser como ellos'. Hay que cambiar las estadísticas."
+                    <div class="p-6 bg-paleOrange-light/40 border-l-4 border-paleOrange rounded-r-lg mt-4">
+                        <p class="text-charcoal-800 font-medium italic text-lg">
+                            "El secreto no es resignarse ni acostumbrarse a la rutina, hay que disfrutar al máximo. Hay que cambiar las estadísticas. Lograr que tus hijos te vean y digan: 'Yo quiero un amor así'."
                         </p>
                     </div>
                     <div class="pt-4">
-                        <a href="#LINK_A_TU_ARTICULO_DE_COCINA" class="inline-flex items-center justify-center px-8 py-4 bg-paleOrange text-white font-bold uppercase tracking-widest text-xs rounded-full hover:bg-paleOrange-dark hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                            ¡A bailar en la cocina! Lee más aquí
+                        <!-- Gancho y CTA -->
+                        <a href="#LINK_ARTICULO_COCINA" class="inline-flex items-center justify-center px-8 py-4 bg-paleOrange text-white font-bold uppercase tracking-widest text-xs rounded-full hover:bg-paleOrange-dark hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                            ¡Atrévete a bailar en la cocina! Lee más
                             <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                         </a>
                     </div>
@@ -167,20 +155,19 @@
         </div>
     </section>
 
-    <!-- LIBROS: EDUCACIÓN A LA GENERACIÓN SIGUIENTE -->
-    <section id="educacion" class="py-24 bg-white border-t border-paleOrange-light reveal">
+    <!-- LIBROS: EDUCACIÓN -->
+    <section id="educacion" class="py-20 bg-white border-t border-paleOrange-light reveal">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="text-center space-y-4 mb-16">
-                <span class="text-sm font-bold tracking-widest text-paleOrange-dark uppercase">Trascendencia</span>
-                <h2 class="font-title text-3xl sm:text-4xl font-extrabold text-charcoal-900 uppercase">Educación a la Generación Siguiente</h2>
+                <span class="text-sm font-bold tracking-widest text-paleOrange-dark uppercase">Trascendencia y Estética</span>
+                <h2 class="font-title text-3xl sm:text-4xl font-extrabold text-charcoal-900 uppercase">La Educación Familiar</h2>
                 <div class="w-16 h-1 bg-pastelYellow mx-auto rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-                <!-- Libro 1 -->
                 <div class="bg-softSand border border-paleOrange/30 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row gap-6 items-start group">
                     <div class="w-24 h-32 bg-paleOrange-dark rounded-md shadow-md flex items-center justify-center shrink-0 group-hover:-translate-y-2 transition-transform">
-                        <i data-lucide="book-heart" class="w-10 h-10 text-white"></i>
+                        <i data-lucide="utensils-crossed" class="w-10 h-10 text-white"></i>
                     </div>
                     <div class="space-y-3">
                         <h3 class="font-title text-xl font-bold text-charcoal-900">A la mesa con Dios</h3>
@@ -188,15 +175,14 @@
                             La mesa familiar como primera escuela de civismo. El lugar sagrado donde se aprende a escuchar y a cultivar la presencia divina en el centro del hogar.
                         </p>
                         <a href="#LINK_LIBRO_1" class="inline-flex items-center text-paleOrange-dark text-xs font-bold uppercase tracking-widest hover:text-charcoal-900 transition-colors pt-2">
-                            Descubrir libro <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                            Adquirir libro <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Libro 2 -->
                 <div class="bg-softSand border border-paleOrange/30 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row gap-6 items-start group">
                     <div class="w-24 h-32 bg-pastelYellow-dark rounded-md shadow-md flex items-center justify-center shrink-0 group-hover:-translate-y-2 transition-transform">
-                        <i data-lucide="sparkles" class="w-10 h-10 text-white"></i>
+                        <i data-lucide="paintbrush-2" class="w-10 h-10 text-white"></i>
                     </div>
                     <div class="space-y-3">
                         <h3 class="font-title text-xl font-bold text-charcoal-900">Dios y las artes del hogar</h3>
@@ -204,7 +190,7 @@
                             Una mirada profunda a cómo las tareas cotidianas y la estética del hogar son verdaderas expresiones de arte que acercan el alma a lo trascendente.
                         </p>
                         <a href="#LINK_LIBRO_2" class="inline-flex items-center text-paleOrange-dark text-xs font-bold uppercase tracking-widest hover:text-charcoal-900 transition-colors pt-2">
-                            Descubrir libro <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                            Adquirir libro <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
                         </a>
                     </div>
                 </div>
@@ -212,80 +198,96 @@
         </div>
     </section>
 
-    <!-- NUEVA SECCIÓN: YOUTH (GANCHO PARA JÓVENES) -->
-    <section id="youth" class="py-24 bg-gradient-to-br from-paleOrange to-paleOrange-dark text-white reveal relative overflow-hidden">
-        <!-- Decoración de fondo -->
-        <i data-lucide="flame" class="absolute -right-10 -top-10 w-64 h-64 text-white opacity-10 rotate-12"></i>
-        
-        <div class="max-w-6xl mx-auto px-6 lg:px-12 relative z-10">
-            <div class="flex flex-col lg:flex-row gap-12 items-center">
-                
-                <div class="w-full lg:w-1/2 space-y-6">
-                    <span class="inline-block px-4 py-1 bg-white/20 rounded-full text-xs font-bold tracking-widest uppercase mb-2">¡Bienvenido a Youth!</span>
-                    <h2 class="font-title text-4xl sm:text-5xl font-extrabold leading-tight">
-                        Pon tus manos <br><span class="text-pastelYellow">en la masa.</span>
-                    </h2>
-                    <p class="text-lg text-white/90 leading-relaxed font-light">
-                        Si tienes entre 14 y 26 años y buscas un sitio que te ayude a desarrollar tu fe, conectar con otros jóvenes y encontrar recursos invaluables para tu vida diaria, este es tu lugar.
-                    </p>
-                    
-                    <ul class="space-y-4 mt-6">
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle-2" class="w-6 h-6 text-pastelYellow shrink-0 mr-3"></i>
-                            <span class="text-sm font-medium"><strong>San Rafael:</strong> Descubre la visión de San Josemaría para jóvenes. Historias inspiradoras y vocación.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle-2" class="w-6 h-6 text-pastelYellow shrink-0 mr-3"></i>
-                            <span class="text-sm font-medium"><strong>Para Rezar:</strong> Encuentra a Dios en el corazón. Audios, textos y webstories para conectar profundo.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle-2" class="w-6 h-6 text-pastelYellow shrink-0 mr-3"></i>
-                            <span class="text-sm font-medium"><strong>Mundo y Yo & Creo:</strong> Acción real. Testimonios sobre pareja, amistad y resolución de dudas sobre la fe.</span>
-                        </li>
-                    </ul>
-
-                    <div class="pt-6">
-                        <!-- LINK ATRACTIVO AL OPUS DEI YOUTH -->
-                        <a href="https://opusdei.org/es/tag/jovenes/" target="_blank" class="inline-flex items-center justify-center px-8 py-4 bg-white text-paleOrange-dark font-bold uppercase tracking-widest text-sm rounded-full hover:bg-pastelYellow hover:text-charcoal-900 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                            Explorar los recursos de Youth
-                            <i data-lucide="external-link" class="w-5 h-5 ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="w-full lg:w-1/2">
-                    <img src="https://images.unsplash.com/photo-1529156069898-49953eb1b5ce?q=80&w=1000&auto=format&fit=crop" alt="Jóvenes compartiendo" class="w-full rounded-3xl shadow-2xl border-4 border-white/20 transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SE LE ABRIERON LOS OJOS (AHORA EN COLORES CLAROS Y CÁLIDOS) -->
-    <section id="ojos" class="py-24 bg-softSand border-t border-paleOrange-light reveal">
-        <div class="max-w-6xl mx-auto px-6 lg:px-12">
+    <!-- SECCIÓN JUVENTUD (GANCHOS COPYWRITING) -->
+    <section id="youth" class="py-24 bg-paleOrange-light border-t border-paleOrange/30 reveal">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
             
-            <div class="text-center space-y-4 mb-12">
-                <i data-lucide="eye" class="w-12 h-12 mx-auto text-paleOrange"></i>
-                <h2 class="font-title text-3xl sm:text-4xl font-extrabold uppercase text-charcoal-900">Se le abrieron los ojos</h2>
-                <div class="w-16 h-1 bg-pastelYellow mx-auto rounded-full"></div>
-                <p class="max-w-2xl mx-auto text-gray-600 font-medium pt-4">
-                    Resúmenes y conceptos clave sobre el arte, las pantallas y la búsqueda de la belleza. Haz clic en las opciones para explorar.
+            <div class="text-center space-y-4 mb-16">
+                <span class="inline-block px-4 py-1 bg-white rounded-full text-xs font-bold tracking-widest text-paleOrange-dark uppercase mb-2 shadow-sm">Para Jóvenes</span>
+                <h2 class="font-title text-3xl sm:text-5xl font-extrabold text-charcoal-900 leading-tight">
+                    Desarrolla tu fe. <br>Conecta. <span class="text-paleOrange-dark">Haz que se note.</span>
+                </h2>
+                <p class="max-w-2xl mx-auto text-charcoal-800 text-lg pt-4">
+                    Si tienes entre 14 y 26 años, aquí tienes ideas, historias reales y recursos que te ayudarán a llevar tu fe a la calle, a la universidad y a tus amigos.
                 </p>
             </div>
 
-            <!-- INTERACTIVIDAD CON JAVASCRIPT: PESTAÑAS (TABS LUMINOSAS) -->
-            <div class="bg-white rounded-3xl p-6 md:p-10 shadow-xl border border-paleOrange-light/50">
+            <!-- Ganchos / Artículos -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
-                <!-- Botones de las Pestañas -->
+                <!-- Tarjeta 1: El Aura -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full border-b-4 border-paleOrange">
+                    <div class="mb-6 bg-paleOrange-light/50 w-16 h-16 rounded-full flex items-center justify-center">
+                        <i data-lucide="sparkles" class="w-8 h-8 text-paleOrange-dark"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-charcoal-900 mb-4 font-title leading-tight">El aura que no se puede "farmear"</h3>
+                    <p class="text-gray-600 mb-8 flex-grow">
+                        Todos queremos ser reconocidos, demostrar que no somos un NPC. Pero la atención de las redes se apaga rápido. ¿Y si existiera un brillo que deje huella eterna y no dependa de los likes? Descubre la luz que llevaban los jóvenes santos de la vida normal.
+                    </p>
+                    <a href="https://opusdei.org/es/article/el-aura-que-no-se-puede-farmear/" target="_blank" class="inline-flex items-center font-bold uppercase tracking-widest text-xs text-paleOrange-dark hover:text-charcoal-900 transition-colors">
+                        Descubre de qué trata <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Tarjeta 2: Rezar -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full border-b-4 border-pastelYellow-dark">
+                    <div class="mb-6 bg-pastelYellow/30 w-16 h-16 rounded-full flex items-center justify-center">
+                        <i data-lucide="message-circle" class="w-8 h-8 text-pastelYellow-dark"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-charcoal-900 mb-4 font-title leading-tight">¿Rezar como si hablaras con tu mejor amigo?</h3>
+                    <p class="text-gray-600 mb-8 flex-grow">
+                        ¿Te imaginas que tu vida entera fuera un tema interesante para conversarlo con Dios? La oración no es un monólogo distante; es un diálogo íntimo y honesto con Quien te quiere más de lo que crees. Anímate a empezar la charla.
+                    </p>
+                    <a href="https://opusdei.org/es/tag/jovenes/" target="_blank" class="inline-flex items-center font-bold uppercase tracking-widest text-xs text-pastelYellow-dark hover:text-charcoal-900 transition-colors">
+                        Aprende cómo hacerlo <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Tarjeta 3: Mundo y Yo -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full border-b-4 border-charcoal-800">
+                    <div class="mb-6 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center">
+                        <i data-lucide="globe-2" class="w-8 h-8 text-charcoal-800"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-charcoal-900 mb-4 font-title leading-tight">Mundo y Yo: Pon tus manos en la masa</h3>
+                    <p class="text-gray-600 mb-8 flex-grow">
+                        Tu fe tiene que notarse allá afuera. Aquí encontrarás testimonios reales de jóvenes sobre temas que te importan: relaciones, estudios, amistad e iniciativas sociales. Inspírate y atrévete a ser ese amigo que marca la diferencia.
+                    </p>
+                    <a href="https://opusdei.org/es/tag/jovenes/" target="_blank" class="inline-flex items-center font-bold uppercase tracking-widest text-xs text-charcoal-800 hover:text-paleOrange-dark transition-colors">
+                        Lee sus historias <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SE LE ABRIERON LOS OJOS (COLORES CLAROS Y OJO PARPADEANDO) -->
+    <section id="ojos" class="py-24 bg-white border-t border-paleOrange-light reveal">
+        <div class="max-w-6xl mx-auto px-6 lg:px-12">
+            
+            <div class="text-center space-y-4 mb-12">
+                <!-- ÍCONO CON ANIMACIÓN DE PARPADEO (vía clase animate-blink) -->
+                <span class="animate-blink inline-block">
+                    <i data-lucide="eye" class="w-14 h-14 mx-auto text-paleOrange-dark drop-shadow-sm"></i>
+                </span>
+                <h2 class="font-title text-3xl sm:text-4xl font-extrabold uppercase text-charcoal-900">Se le abrieron los ojos</h2>
+                <div class="w-16 h-1 bg-pastelYellow mx-auto rounded-full mt-4"></div>
+                <p class="max-w-2xl mx-auto text-gray-600 font-medium pt-4">
+                    Conceptos rápidos sobre el arte, las pantallas y la búsqueda de la belleza. Haz clic en las opciones para explorar.
+                </p>
+            </div>
+
+            <!-- INTERACTIVIDAD CON JAVASCRIPT: PESTAÑAS (TABS) -->
+            <div class="bg-softSand rounded-3xl p-6 md:p-10 shadow-xl border border-paleOrange-light/50">
+                
                 <div class="flex flex-wrap justify-center gap-4 mb-10 border-b border-gray-200 pb-6" id="tabs-container">
                     <button class="tab-btn active px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide bg-paleOrange text-white shadow-md transition-all" data-target="tab1">
-                        Nuestro mundo
+                        El Mundo en Pantalla
                     </button>
-                    <button class="tab-btn px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide bg-gray-100 text-gray-500 hover:bg-paleOrange-light hover:text-charcoal-900 transition-all" data-target="tab2">
-                        Lo Divino
+                    <button class="tab-btn px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide bg-white border border-gray-200 text-gray-500 hover:border-paleOrange hover:text-paleOrange-dark transition-all" data-target="tab2">
+                        Lo Divino en la Materia
                     </button>
-                    <button class="tab-btn px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide bg-gray-100 text-gray-500 hover:bg-paleOrange-light hover:text-charcoal-900 transition-all" data-target="tab3">
+                    <button class="tab-btn px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide bg-white border border-gray-200 text-gray-500 hover:border-paleOrange hover:text-paleOrange-dark transition-all" data-target="tab3">
                         Educar la Mirada
                     </button>
                 </div>
@@ -295,9 +297,11 @@
                     <i data-lucide="clapperboard" class="w-16 h-16 mx-auto text-pastelYellow-dark mb-6"></i>
                     <h3 class="text-2xl font-title font-bold text-charcoal-900 mb-4">Más que simple entretenimiento</h3>
                     <p class="text-lg leading-relaxed text-gray-600 mb-8">
-                        El cine y las series no son solo para "apagar el cerebro". Son espejos de nuestra realidad. Dios también se sienta a nuestro lado en la butaca; <strong>podemos usar estas historias para afinar nuestra sensibilidad</strong>, entender el dolor ajeno y contemplar los anhelos más profundos del corazón humano.
+                        El cine y las series no son solo para "apagar el cerebro". Son espejos de nuestra realidad. Dios también se sienta a nuestro lado en la butaca; <strong>podemos usar estas historias para afinar nuestra sensibilidad</strong>, entender el dolor ajeno y contemplar los anhelos humanos.
                     </p>
-                    <a href="#LINK_ARTICULO_COMPLETO" class="text-paleOrange-dark font-bold uppercase tracking-widest text-sm hover:underline">Leer el ensayo completo →</a>
+                    <a href="#LINK_ARTICULO_OJOS_1" class="inline-flex items-center text-paleOrange-dark font-bold uppercase tracking-widest text-sm hover:text-charcoal-900 transition-colors">
+                        Profundiza aquí <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
                 </div>
 
                 <!-- Contenido Pestaña 2 -->
@@ -307,17 +311,21 @@
                     <p class="text-lg leading-relaxed text-gray-600 mb-8">
                         Lo material no es un obstáculo para llegar a Dios. Al igual que el Verbo se hizo carne, el verdadero arte revela verdades espirituales a través de cosas tangibles (pintura, sonido, cuerpos). <strong>Aprender a amar lo cotidiano es el primer paso para descubrir lo sagrado.</strong>
                     </p>
-                    <a href="#LINK_ARTICULO_COMPLETO" class="text-paleOrange-dark font-bold uppercase tracking-widest text-sm hover:underline">Leer el ensayo completo →</a>
+                    <a href="#LINK_ARTICULO_OJOS_2" class="inline-flex items-center text-paleOrange-dark font-bold uppercase tracking-widest text-sm hover:text-charcoal-900 transition-colors">
+                        Profundiza aquí <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
                 </div>
 
                 <!-- Contenido Pestaña 3 -->
                 <div id="tab3" class="tab-content text-center max-w-3xl mx-auto">
                     <i data-lucide="graduation-cap" class="w-16 h-16 mx-auto text-pastelYellow-dark mb-6"></i>
-                    <h3 class="text-2xl font-title font-bold text-charcoal-900 mb-4">La defensa frente al antipaís</h3>
+                    <h3 class="text-2xl font-title font-bold text-charcoal-900 mb-4">La defensa de nuestra mente</h3>
                     <p class="text-lg leading-relaxed text-gray-600 mb-8">
-                        La mejor defensa contra la manipulación y la superficialidad no es esconderse, sino <strong>exponer a la juventud a lo verdaderamente excelente</strong>. Educar los ojos para discernir la belleza real requiere paciencia, silencios y esfuerzo, pero es la única manera de forjar una conciencia crítica sólida.
+                        La mejor defensa contra la manipulación no es esconderse, sino <strong>exponer a la juventud a lo verdaderamente excelente</strong>. Educar los ojos para discernir la belleza requiere paciencia y esfuerzo, pero es la única manera de forjar una conciencia crítica sólida.
                     </p>
-                    <a href="#LINK_ARTICULO_COMPLETO" class="text-paleOrange-dark font-bold uppercase tracking-widest text-sm hover:underline">Leer el ensayo completo →</a>
+                    <a href="#LINK_ARTICULO_OJOS_3" class="inline-flex items-center text-paleOrange-dark font-bold uppercase tracking-widest text-sm hover:text-charcoal-900 transition-colors">
+                        Profundiza aquí <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
                 </div>
 
             </div>
@@ -355,47 +363,43 @@
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
 
-        // 3. PROGRAMACIÓN INTERACTIVA: Lógica de las Pestañas (Tabs)
+        // 3. Lógica de las Pestañas (Tabs)
         const tabBtns = document.querySelectorAll('.tab-btn');
         const tabContents = document.querySelectorAll('.tab-content');
 
         tabBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Quitar clase activa de todos los botones
+                // Desactivar todos
                 tabBtns.forEach(b => {
                     b.classList.remove('bg-paleOrange', 'text-white', 'shadow-md');
-                    b.classList.add('bg-gray-100', 'text-gray-500');
+                    b.classList.add('bg-white', 'text-gray-500');
                 });
                 
-                // Ocultar todos los contenidos
-                tabContents.forEach(content => {
-                    content.classList.remove('active');
-                });
+                tabContents.forEach(content => content.classList.remove('active'));
 
-                // Activar el botón seleccionado
-                btn.classList.remove('bg-gray-100', 'text-gray-500');
+                // Activar el clickeado
+                btn.classList.remove('bg-white', 'text-gray-500');
                 btn.classList.add('bg-paleOrange', 'text-white', 'shadow-md');
 
-                // Mostrar el contenido correspondiente
                 const targetId = btn.getAttribute('data-target');
                 document.getElementById(targetId).classList.add('active');
             });
         });
 
-        // 4. PROGRAMACIÓN INTERACTIVA: Animación al hacer Scroll (Intersection Observer)
+        // 4. Animación al hacer Scroll
         const revealElements = document.querySelectorAll('.reveal');
         
         const revealCallback = (entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    observer.unobserve(entry.target); // Solo animar una vez
+                    observer.unobserve(entry.target); 
                 }
             });
         };
 
         const revealOptions = {
-            threshold: 0.15, // Ejecutar cuando el 15% del elemento sea visible
+            threshold: 0.15,
             rootMargin: "0px 0px -50px 0px"
         };
 
