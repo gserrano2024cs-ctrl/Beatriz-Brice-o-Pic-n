@@ -11,7 +11,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -32,7 +32,7 @@
                     },
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
+                        cursive: ['Caveat', 'cursive'],
                     }
                 }
             }
@@ -96,9 +96,9 @@
                     </p>
                 </div>
 
-                <!-- Cita Inspiradora -->
-                <div class="border-l-4 border-brand-dark pl-6 py-2 bg-gray-50/50 rounded-r-lg">
-                    <p class="text-xl md:text-2xl font-serif text-gray-900 italic leading-relaxed font-medium">
+                <!-- Cita Inspiradora con fuente Cursive (Caveat) más legible -->
+                <div class="border-l-4 border-brand-dark pl-6 py-4 bg-gray-50/50 rounded-r-lg">
+                    <p class="text-2xl md:text-3xl font-cursive text-gray-800 leading-relaxed font-semibold">
                         "La verdadera trascendencia no se construye con grandes monumentos, sino con las historias y valores que amasamos a fuego lento, todos los días, en el centro de nuestro hogar."
                     </p>
                     <p class="text-brand-dark font-bold text-sm tracking-wide mt-4 uppercase">
@@ -134,7 +134,6 @@
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             
             <div class="order-2 md:order-1 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg group">
-                <!-- Se actualizó la extensión a .jpeg -->
                 <img src="cocina-abierta.jpeg" alt="Cocina de concepto abierto" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
 
@@ -204,6 +203,7 @@
             </div>
 
             <div class="relative aspect-[3/4] bg-gray-200 rounded-2xl overflow-hidden shadow-lg border-4 border-white flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-700">
+                <!-- Asegúrate de que el archivo coincida exactamente con "mario-briceno.jpg" en minúsculas y extensión -->
                 <img src="mario-briceno.jpg" alt="Retrato de Mario Briceño Iragorry" class="w-full h-full object-cover">
             </div>
 
@@ -233,10 +233,10 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 hide-scroll cursor-grab active:cursor-grabbing">
                 
-                <!-- Artículo 1 -->
+                <!-- Artículo 1 (Ajustado a object-contain) -->
                 <a href="https://opusdei.org/es/article/y-si-rezar-fuera-como-hablar-con-tu-mejor-amigo/" target="_blank" class="snap-center shrink-0 w-[300px] md:w-[350px] bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 group flex flex-col">
-                    <div class="h-48 bg-gray-200 overflow-hidden">
-                        <img src="image_d9cb0f.png" alt="Chat: Hablar con Dios" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="h-48 bg-gray-100 overflow-hidden flex items-center justify-center p-2">
+                        <img src="image_d9cb0f.png" alt="Chat: Hablar con Dios" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="font-bold text-xl text-gray-900 mb-3 group-hover:text-brand-dark transition-colors">Hablar con Dios como un amigo</h3>
@@ -304,7 +304,7 @@
             © 2026 Beatriz Briceño-Picón. Todos los derechos reservados.
         </p>
         <p class="text-sm text-gray-400">
-            Landing page creado por <a href="https://wa.me/XXXXXXXXXXXX" target="_blank" class="text-brand-dark font-bold hover:underline transition-all">Greydemar Serrano</a>
+            Landing page creado por <a href="https://wa.me/584126339776" target="_blank" class="text-brand-dark font-bold hover:underline transition-all">Greydemar Serrano</a>
         </p>
     </footer>
 
