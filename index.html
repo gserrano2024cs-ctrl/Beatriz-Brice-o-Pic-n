@@ -8,7 +8,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -23,13 +23,13 @@
                         brand: {
                             light: '#FFEDD5',
                             DEFAULT: '#FDBA74',
-                            dark: '#E06B00', /* Un naranja un poco más sobrio/elegante */
+                            dark: '#E06B00',
                             bg: '#FCFCFC'
                         }
                     },
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'], /* Para las citas */
+                        serif: ['Playfair Display', 'serif'],
                     }
                 }
             }
@@ -38,11 +38,10 @@
     <style>
         body { background-color: #FCFCFC; color: #2D2D2D; }
         
-        /* Ocultar barra de scroll en el carrusel pero permitir scroll */
         .hide-scroll::-webkit-scrollbar { display: none; }
         .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* Animación Parpadeo - Dos Ojos Cute */
+        /* Animación Parpadeo - Dos Ojos Cute (Más rápido) */
         .eyes-container {
             display: flex;
             justify-content: center;
@@ -55,7 +54,8 @@
             background-color: #2D2D2D;
             border-radius: 50%;
             position: relative;
-            animation: blink 4s infinite ease-in-out;
+            /* Se redujo de 4s a 2.5s para que parpadee más rápido */
+            animation: blink 2.5s infinite ease-in-out;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         .cute-eye::after {
@@ -70,7 +70,7 @@
         }
         @keyframes blink {
             0%, 88%, 100% { transform: scaleY(1); }
-            92% { transform: scaleY(0.1); }
+            94% { transform: scaleY(0.1); }
         }
 
         /* Animación Reveal */
@@ -80,9 +80,8 @@
 </head>
 <body class="antialiased selection:bg-brand-dark selection:text-white">
 
-    <!-- HERO SECTION (Sobre Beatriz y la Cita) -->
-    <header class="min-h-[85vh] flex items-center pt-20 pb-16 px-6 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-brand-light/30 to-transparent -z-10"></div>
+    <!-- HERO SECTION (Fondo Blanco) -->
+    <header class="min-h-[85vh] flex items-center pt-20 pb-16 px-6 bg-white relative overflow-hidden">
         <div class="max-w-5xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
             
             <div class="space-y-8">
@@ -95,10 +94,13 @@
                     </p>
                 </div>
 
-                <!-- Cita Inspiradora -->
-                <div class="border-l-4 border-brand-dark pl-6 py-2">
-                    <p class="text-xl md:text-2xl font-serif text-gray-700 italic leading-relaxed">
+                <!-- Cita Inspiradora (Más legible y con autor) -->
+                <div class="border-l-4 border-brand-dark pl-6 py-2 bg-gray-50/50 rounded-r-lg">
+                    <p class="text-xl md:text-2xl font-serif text-gray-900 italic leading-relaxed font-medium">
                         "La verdadera trascendencia no se construye con grandes monumentos, sino con las historias y valores que amasamos a fuego lento, todos los días, en el centro de nuestro hogar."
+                    </p>
+                    <p class="text-brand-dark font-bold text-sm tracking-wide mt-4 uppercase">
+                        — Beatriz Briceño-Picón
                     </p>
                 </div>
 
@@ -115,10 +117,9 @@
             </div>
 
             <!-- Foto de Beatriz -->
-            <div class="relative w-full aspect-[4/5] bg-gray-200 rounded-2xl shadow-xl overflow-hidden flex items-center justify-center border-4 border-white group">
-                <!-- SUGERENCIA: Aquí va la foto de Beatriz -->
-                <span class="text-gray-500 font-medium tracking-wide">[Foto de Beatriz Briceño-Picón]</span>
-                <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+            <div class="relative w-full aspect-[4/5] bg-gray-100 rounded-2xl shadow-xl overflow-hidden flex items-center justify-center border-4 border-white group">
+                <img src="bea.png" alt="Beatriz Briceño-Picón" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500"></div>
             </div>
             
         </div>
@@ -126,15 +127,12 @@
 
     <div class="max-w-6xl mx-auto px-6 py-12"><hr class="border-gray-200"></div>
 
-    <!-- SECCIÓN 1: EL HOGAR Y LA COCINA (Concepto Abierto / Matrimonio) -->
+    <!-- SECCIÓN 1: EL HOGAR Y LA COCINA -->
     <section class="py-20 px-6 bg-white reveal">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             
             <div class="order-2 md:order-1 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg group">
-                <!-- SUGERENCIA: Aquí va la imagen de la cocina de concepto abierto -->
-                <div class="absolute inset-0 bg-gray-200 flex items-center justify-center">
-                    <span class="text-gray-500 font-medium text-sm">[Imagen: Cocina de Concepto Abierto]</span>
-                </div>
+                <img src="cocina-abierta.jpg" alt="Cocina de concepto abierto" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
 
             <div class="order-1 md:order-2 space-y-6">
@@ -149,7 +147,6 @@
                     Es allí, entre sartenes y rutinas, donde reside la verdadera esencia del matrimonio. Mantener la chispa, el buen humor y la conexión diaria requiere que el amor baile libremente en los espacios comunes, sosteniendo y nutriendo el hogar mucho más allá de los alimentos.
                 </p>
 
-                <!-- Grid de Artículos de Beatriz sobre el hogar -->
                 <div class="mt-8 space-y-4">
                     <h3 class="font-bold text-sm text-gray-900 uppercase tracking-wide border-b border-gray-200 pb-2">Artículos de Beatriz sobre el hogar:</h3>
                     
@@ -168,14 +165,14 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 2: SU PADRE (Mario Briceño Iragorry) -->
+    <!-- SECCIÓN 2: SU PADRE -->
     <section class="py-24 px-6 bg-brand-bg border-y border-gray-100 reveal">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             
             <div class="space-y-6">
                 <span class="text-gray-500 font-bold tracking-widest text-xs uppercase">Historia Viva</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-                    El hombre ilustre que yo llamaba papá.
+                    El hombre ilustre que yo llamo papá.
                 </h2>
                 <p class="text-gray-600 leading-relaxed text-lg">
                     La historia actual de Venezuela reconoce a <strong>Mario Briceño Iragorry</strong> como un pensador, ensayista y pilar fundamental de nuestra identidad nacional. Sin embargo, detrás del prócer de las letras, existía el calor del padre.
@@ -184,7 +181,6 @@
                     Beatriz nos ofrece un acercamiento inédito. Una mirada construida desde la pasión, el cariño familiar y la admiración profunda. Aquí no solo leerás sobre un ilustre venezolano, sino sobre el ser humano que enseñó con el ejemplo el valor de la integridad y el amor a su país.
                 </p>
 
-                <!-- Grid de Artículos sobre el Padre -->
                 <div class="mt-8 space-y-4">
                     <h3 class="font-bold text-sm text-gray-900 uppercase tracking-wide border-b border-gray-200 pb-2">Artículos sobre su obra y vida:</h3>
                     
@@ -205,14 +201,13 @@
             </div>
 
             <div class="relative aspect-[3/4] bg-gray-200 rounded-2xl overflow-hidden shadow-lg border-4 border-white flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-700">
-                <!-- SUGERENCIA: Imagen de Mario Briceño Iragorry (preferiblemente junto a ella o en contexto familiar) -->
-                <span class="text-gray-500 font-medium text-sm text-center px-4">[Imagen histórica / Retrato de Mario Briceño Iragorry]</span>
+                <img src="mario-briceno.jpg" alt="Retrato de Mario Briceño Iragorry" class="w-full h-full object-cover">
             </div>
 
         </div>
     </section>
 
-    <!-- SECCIÓN 3: LA JUVENTUD (Y se le abrieron los ojos) -->
+    <!-- SECCIÓN 3: LA JUVENTUD -->
     <section class="py-24 bg-white reveal overflow-hidden">
         <div class="max-w-6xl mx-auto px-6 text-center mb-12">
             <span class="inline-block py-1 px-3 bg-brand-light/50 text-brand-dark font-bold tracking-widest text-xs uppercase rounded-full mb-4">El Futuro y la Verdad</span>
@@ -232,14 +227,11 @@
             </p>
         </div>
 
-        <!-- CARRUSEL DE ARTÍCULOS OPUS DEI (Desplazamiento horizontal) -->
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 hide-scroll cursor-grab active:cursor-grabbing">
                 
-                <!-- Articulo 1 (Usa la imagen de referencia provista) -->
                 <a href="https://opusdei.org/" target="_blank" class="snap-center shrink-0 w-[300px] md:w-[350px] bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 group flex flex-col">
                     <div class="h-48 bg-gray-200 overflow-hidden">
-                        <!-- Aquí va la imagen referencial del chat "image_d9cb0f.png" -->
                         <img src="image_d9cb0f.png" alt="Chat: Hablar con Dios" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
@@ -251,10 +243,9 @@
                     </div>
                 </a>
 
-                <!-- Articulo 2 -->
                 <a href="https://opusdei.org/" target="_blank" class="snap-center shrink-0 w-[300px] md:w-[350px] bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 group flex flex-col">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-400">
-                        [Imagen: Farmear Aura]
+                    <div class="h-48 bg-gray-200 overflow-hidden">
+                        <img src="farmear-aura.jpg" alt="Farmear Aura" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="font-bold text-xl text-gray-900 mb-3 group-hover:text-brand-dark transition-colors">El aura que no se puede farmear</h3>
@@ -265,10 +256,9 @@
                     </div>
                 </a>
 
-                <!-- Articulo 3 -->
                 <a href="https://opusdei.org/" target="_blank" class="snap-center shrink-0 w-[300px] md:w-[350px] bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 group flex flex-col">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-400">
-                        [Imagen: Jóvenes y Futuro]
+                    <div class="h-48 bg-gray-200 overflow-hidden">
+                        <img src="jovenes-futuro.jpg" alt="Jóvenes y Futuro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="font-bold text-xl text-gray-900 mb-3 group-hover:text-brand-dark transition-colors">Desafiar el ruido del mundo</h3>
@@ -280,14 +270,13 @@
                 </a>
 
             </div>
-            <!-- Instrucción visual para móvil -->
             <p class="text-center text-gray-400 text-xs mt-4 flex items-center justify-center md:hidden">
                 <i data-lucide="arrow-left-right" class="w-4 h-4 mr-2"></i> Desliza para ver más
             </p>
         </div>
     </section>
 
-    <!-- FOOTER: EL LEGADO CONTINÚA (Próximamente) -->
+    <!-- FOOTER: EL LEGADO CONTINÚA -->
     <section class="py-24 px-6 bg-gray-900 text-center reveal">
         <div class="max-w-2xl mx-auto space-y-6">
             <i data-lucide="sparkles" class="w-10 h-10 mx-auto text-brand-dark mb-4"></i>
@@ -303,16 +292,20 @@
         </div>
     </section>
 
+    <!-- FOOTER INFERIOR CON CRÉDITOS -->
     <footer class="bg-black py-8 px-6 text-center">
-        <p class="text-sm text-gray-500 font-medium">© 2026 Beatriz Briceño-Picón. Todos los derechos reservados.</p>
+        <p class="text-sm text-gray-500 font-medium mb-2">
+            © 2026 Beatriz Briceño-Picón. Todos los derechos reservados.
+        </p>
+        <p class="text-sm text-gray-400">
+            Landing page creado por <a href="https://wa.me/XXXXXXXXXXXX" target="_blank" class="text-brand-dark font-bold hover:underline transition-all">Greydemar Serrano</a>
+        </p>
     </footer>
 
     <!-- Vanilla JS -->
     <script>
-        // Inicializar Iconos
         lucide.createIcons();
 
-        // Reveal en scroll
         const reveals = document.querySelectorAll('.reveal');
         const revealOnScroll = () => {
             const windowHeight = window.innerHeight;
