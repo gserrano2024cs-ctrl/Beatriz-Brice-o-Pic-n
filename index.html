@@ -3,320 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beatriz Briceño-Picón | Entrelazando Valores y Legado</title>
+    <title>Beatriz Briceño-Picón | Un Legado de Valores</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Tailwind Config -->
+    
+    <!-- Configuración Tailwind & Custom CSS -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         brand: {
-                            sand: '#FDFBF7',
-                            terracotta: '#D97757',
-                            sage: '#8BA88E',
-                            navy: '#2C3E50',
-                            gold: '#D4AF37'
+                            light: '#FFEDD5',
+                            DEFAULT: '#FDBA74',
+                            dark: '#F97316',
+                            text: '#333333',
+                            bg: '#FAFAFA'
                         }
                     },
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-
     <style>
-        /* Custom Animations & UI Enhancements */
-        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        body { background-color: #FAFAFA; color: #333333; }
         
-        /* Cute Blinking Eyes */
-        .eyes-wrapper { display: flex; gap: 12px; justify-content: center; align-items: center; }
-        .cute-eye { 
-            width: 32px; 
-            height: 32px; 
-            background-color: #2C3E50; 
-            border-radius: 50%; 
-            position: relative; 
-            animation: cute-blink 5s infinite; 
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        /* Animación Parpadeo - Dos Ojos */
+        .eyes-container {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin: 2rem 0;
         }
+        .cute-eye {
+            width: 48px;
+            height: 48px;
+            background-color: #333333;
+            border-radius: 50%;
+            position: relative;
+            animation: blink 4s infinite ease-in-out;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        /* Reflejo del ojo para hacerlo "cute" */
         .cute-eye::after {
             content: '';
             position: absolute;
-            top: 6px;
-            right: 8px;
-            width: 10px;
-            height: 10px;
+            top: 10px;
+            right: 12px;
+            width: 12px;
+            height: 12px;
             background-color: white;
             border-radius: 50%;
         }
-        .cute-eye::before {
-            content: '';
-            position: absolute;
-            top: 16px;
-            right: 20px;
-            width: 4px;
-            height: 4px;
-            background-color: white;
-            border-radius: 50%;
-        }
-        @keyframes cute-blink {
-            0%, 88%, 92%, 100% { transform: scaleY(1); }
-            90% { transform: scaleY(0.1); }
+        @keyframes blink {
+            0%, 88%, 100% { transform: scaleY(1); }
+            92% { transform: scaleY(0.1); }
         }
 
-        /* Glassmorphism */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
+        /* Animación Reveal al hacer scroll */
+        .reveal { opacity: 0; transform: translateY(20px); transition: 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
-<body class="bg-brand-sand text-brand-navy font-sans antialiased selection:bg-brand-terracotta selection:text-white">
+<body class="antialiased selection:bg-brand-dark selection:text-white">
 
-    <!-- HERO SECTION (ESTRUCTURA 1) -->
-    <header class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-brand-sand via-white to-orange-50 z-0"></div>
-        
-        <div class="relative z-10 max-w-6xl mx-auto px-6 py-20 text-center flex flex-col items-center">
-            <span class="inline-block py-1 px-3 rounded-full bg-brand-sage/20 text-brand-sage font-bold tracking-widest text-xs uppercase mb-6">
-                Beatriz Briceño-Picón
-            </span>
-            <!-- Titular Fuerte (6-10 palabras) -->
-            <h1 class="text-5xl md:text-7xl font-serif font-bold text-brand-navy leading-tight mb-6 max-w-4xl">
-                Reescribe el legado de tu <span class="text-brand-terracotta italic">familia</span> y tu <span class="text-brand-terracotta italic">fe</span>.
-            </h1>
-            <!-- Subtítulo / Transformación -->
-            <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl font-light leading-relaxed">
-                Descubre reflexiones profundas y herramientas prácticas que transformarán tu visión del hogar, la educación de la juventud y el valor de nuestra historia compartida.
-            </p>
-            <!-- CTA Inicial -->
-            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <a href="#articulos" class="px-8 py-4 bg-brand-navy text-white rounded-full font-semibold hover:bg-brand-terracotta transition-colors duration-300 shadow-lg hover:shadow-xl flex items-center justify-center">
-                    Explorar Artículos <i data-lucide="arrow-down" class="w-4 h-4 ml-2"></i>
-                </a>
+    <!-- HERO SECTION (Titular, Subtítulo y CTA) -->
+    <header class="min-h-[85vh] flex items-center pt-20 pb-16 px-6 bg-gradient-to-b from-brand-light/40 to-white relative overflow-hidden">
+        <div class="max-w-5xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="space-y-6">
+                <span class="text-brand-dark font-bold tracking-widest uppercase text-xs">Beatriz Briceño-Picón</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-gray-900">
+                    Un legado de valores, de la familia al mundo.
+                </h1>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Descubre cómo transformar la rutina de tu hogar en una escuela de virtudes. Historias de fe, resiliencia y el valor de las pequeñas cosas.
+                </p>
+                <div class="pt-4 flex flex-col sm:flex-row gap-4">
+                    <a href="#articulos" class="inline-flex justify-center items-center px-8 py-4 bg-brand-dark text-white font-bold uppercase tracking-wide text-sm rounded-md hover:bg-orange-700 transition-colors shadow-lg">
+                        Leer Artículos
+                    </a>
+                </div>
+            </div>
+            <!-- Mockup/Imagen Principal Placeholder -->
+            <div class="relative w-full aspect-square md:aspect-[4/5] bg-gray-200 rounded-2xl shadow-2xl overflow-hidden flex items-center justify-center border-4 border-white">
+                <span class="text-gray-400 font-medium">[Imagen/Mockup del Libro o Retrato Principal]</span>
             </div>
         </div>
     </header>
 
-    <!-- EL GANCHO EMOCIONAL & BENEFICIOS (ESTRUCTURA 2 y 3) -->
-    <section class="py-20 bg-white border-y border-gray-100">
-        <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div class="reveal">
-                <h2 class="text-3xl font-serif font-bold mb-6">¿Sientes que el ruido del mundo apaga lo verdaderamente importante?</h2>
-                <p class="text-gray-600 mb-4 leading-relaxed">
-                    En una época de distracciones constantes, es fácil perder la conexión con nuestro núcleo, olvidar de dónde venimos y dejar que la rutina consuma nuestras relaciones.
-                </p>
-                <p class="text-gray-600 font-medium border-l-4 border-brand-terracotta pl-4 italic mb-8">
-                    La solución no es aislarse, sino volver a nuestras raíces, fortalecer nuestros valores y hacer que nuestra fe y nuestra historia cobren vida en el día a día.
-                </p>
-            </div>
-            
-            <div class="glass-card p-8 rounded-2xl shadow-xl reveal delay-100">
-                <h3 class="text-xl font-bold mb-6 flex items-center"><i data-lucide="sparkles" class="w-5 h-5 mr-2 text-brand-gold"></i> Lo que encontrarás aquí:</h3>
-                <ul class="space-y-4">
-                    <li class="flex items-start">
-                        <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-sage mr-3 shrink-0 mt-0.5"></i>
-                        <span class="text-gray-700"><strong>Superación y resiliencia:</strong> Herramientas para afrontar los obstáculos familiares en la vida moderna.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-sage mr-3 shrink-0 mt-0.5"></i>
-                        <span class="text-gray-700"><strong>Vivencias y legado:</strong> Historias nunca antes contadas sobre figuras ilustres y su impacto en nuestro presente.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-sage mr-3 shrink-0 mt-0.5"></i>
-                        <span class="text-gray-700"><strong>Reflexiones aplicables:</strong> Consejos prácticos para integrar la fe y la alegría en el espacio más íntimo: tu hogar.</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- SOBRE SUS ESCRITOS Y RECOMENDACIONES (ESTRUCTURA 4) -->
-    <section id="articulos" class="py-24 bg-brand-sand">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20 reveal">
-                <h2 class="text-4xl font-serif font-bold text-brand-navy mb-4">El Legado en Tres Pilares</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Una selección curada de artículos, lecturas y reflexiones enfocadas en lo que realmente transforma la sociedad.</p>
-            </div>
-
-            <div class="space-y-24">
-                
-                <!-- SECCIÓN 1: Sociedad y "Bailar en la cocina" -->
-                <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
-                    <div class="order-2 lg:order-1 rounded-2xl overflow-hidden shadow-2xl relative group">
-                        <img src="image_d9c296.jpg" alt="La cocina como eje central de la familia" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 aspect-[4/3]">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
-                            <span class="text-white font-medium text-sm tracking-widest uppercase">El Corazón del Hogar</span>
-                        </div>
-                    </div>
-                    <div class="order-1 lg:order-2 space-y-6">
-                        <div class="w-12 h-1 bg-brand-terracotta"></div>
-                        <h3 class="text-3xl font-serif font-bold">Sociedad y Familia: Atrévete a bailar en la cocina</h3>
-                        <p class="text-gray-600 leading-relaxed text-lg">
-                            La cocina rompió sus paredes para convertirse en el verdadero eje integrador de la familia. Es el lugar donde se amasan las historias, donde se construye la armonía y donde los hijos aprenden qué significa amar. ¿Te diviertes en tu matrimonio o solo dejas pasar los días?
-                        </p>
-                        <a href="#link_bailar_cocina" class="inline-flex items-center px-6 py-3 bg-white border border-brand-navy text-brand-navy rounded-full font-bold hover:bg-brand-navy hover:text-white transition-all">
-                            Leer artículo completo <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- SECCIÓN 2: Legado Histórico -->
-                <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
-                    <div class="space-y-6">
-                        <div class="w-12 h-1 bg-brand-gold"></div>
-                        <h3 class="text-3xl font-serif font-bold">Legado Histórico: Las raíces que nos sostienen</h3>
-                        <p class="text-gray-600 leading-relaxed text-lg">
-                            Para entender hacia dónde vamos, debemos honrar a quienes trazaron el camino. Explora artículos dedicados a la memoria de su padre, una figura ilustre de la historia venezolana, y descubre cómo los valores cívicos y morales del pasado son la brújula que necesita nuestra sociedad actual.
-                        </p>
-                        <a href="#link_historia_padre" class="inline-flex items-center px-6 py-3 bg-white border border-brand-navy text-brand-navy rounded-full font-bold hover:bg-brand-gold hover:border-brand-gold hover:text-white transition-all">
-                            Descubrir la historia <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                        </a>
-                    </div>
-                    <div class="rounded-2xl overflow-hidden shadow-2xl relative bg-brand-navy p-12 flex flex-col justify-center items-center text-center aspect-[4/3]">
-                        <i data-lucide="landmark" class="w-20 h-20 text-brand-gold mb-6 opacity-80"></i>
-                        <h4 class="text-2xl font-serif font-bold text-white mb-2">Memoria Viva</h4>
-                        <p class="text-gray-300 italic">"Una sociedad que recuerda es una sociedad con futuro."</p>
-                    </div>
-                </div>
-
-                <!-- SECCIÓN 3: Juventud y Fe -->
-                <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
-                    <div class="order-2 lg:order-1 flex gap-4">
-                        <!-- Imagen Referencia WhatsApp -->
-                        <div class="rounded-2xl overflow-hidden shadow-xl w-1/2 flex items-center justify-center bg-gray-100">
-                            <img src="image_d9cb0f.png" alt="Mensaje de WhatsApp: Hablar con Dios" class="w-full h-auto object-cover">
-                        </div>
-                        <!-- Placeholder Farmear Aura -->
-                        <div class="rounded-2xl overflow-hidden shadow-xl w-1/2 bg-gradient-to-br from-brand-sage to-emerald-900 flex flex-col items-center justify-center p-6 text-center text-white">
-                            <i data-lucide="zap" class="w-10 h-10 mb-4 text-yellow-300"></i>
-                            <h4 class="font-bold text-lg leading-tight">El Aura que no se "farmea"</h4>
-                        </div>
-                    </div>
-                    <div class="order-1 lg:order-2 space-y-6">
-                        <div class="w-12 h-1 bg-brand-sage"></div>
-                        <h3 class="text-3xl font-serif font-bold">Juventud y Fe: Conecta y haz que se note</h3>
-                        <p class="text-gray-600 leading-relaxed text-lg">
-                            Recursos directos para los jóvenes de hoy. ¿Cómo tener un "aura" auténtica que no dependa de los likes? ¿Es posible hablar con Dios con la misma naturalidad con la que le escribes un WhatsApp a tu mejor amigo? Enlaces oficiales y reflexiones para vivir una fe real.
-                        </p>
-                        <div class="flex flex-wrap gap-4 pt-2">
-                            <a href="https://opusdei.org/es/" target="_blank" class="inline-flex items-center px-6 py-3 bg-brand-navy text-white rounded-full font-bold hover:bg-brand-sage transition-all text-sm">
-                                Artículos del Opus Dei <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
-                            </a>
-                            <a href="#link_farmear_aura" class="inline-flex items-center px-6 py-3 bg-gray-200 text-brand-navy rounded-full font-bold hover:bg-gray-300 transition-all text-sm">
-                                Leer "Farmear Aura"
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SE LE ABRIERON LOS OJOS (CUTE EYES) -->
-    <section class="py-24 bg-white border-t border-gray-100 text-center reveal">
-        <div class="max-w-3xl mx-auto px-6">
-            <!-- Interfaz Cute Eyes -->
-            <div class="eyes-wrapper mb-8">
-                <div class="cute-eye"></div>
-                <div class="cute-eye"></div>
-            </div>
-            
-            <h2 class="text-3xl font-serif font-bold mb-6">Y de pronto... se le abrieron los ojos</h2>
-            <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-                Descubre cómo la verdadera estética, el buen cine y la contemplación de la belleza cotidiana pueden educar nuestra mirada y actuar como la mejor defensa para la mente de las nuevas generaciones.
+    <!-- EL GANCHO (Problema y Conexión) -->
+    <section class="py-20 px-6 bg-white reveal">
+        <div class="max-w-3xl mx-auto text-center space-y-6">
+            <i data-lucide="quote" class="w-10 h-10 mx-auto text-brand-dark mb-4"></i>
+            <h2 class="text-3xl font-bold text-gray-900">¿Sientes que los valores de siempre se pierden en el ruido de hoy?</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+                Hubo un momento en que la mesa familiar y las charlas en la cocina parecían desaparecer frente a las pantallas. Esta es una invitación a recuperar nuestro centro. Aprenderás de vivencias reales cómo un legado familiar, marcado por figuras ilustres y la fe cotidiana, puede iluminar tu propia historia.
             </p>
-            <a href="#link_educacion_mirada" class="text-brand-terracotta font-bold border-b-2 border-brand-terracotta hover:text-brand-navy hover:border-brand-navy transition-colors pb-1">
-                Aprende a educar la mirada
-            </a>
         </div>
     </section>
 
-    <!-- PRUEBA SOCIAL / TESTIMONIOS (ESTRUCTURA 5) -->
-    <section class="py-20 bg-brand-sand reveal">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-center text-3xl font-serif font-bold mb-12">Lo que dicen los lectores</h2>
+    <!-- BENEFICIOS Y TRANSFORMACIÓN (Viñetas) -->
+    <section class="py-16 px-6 bg-brand-bg border-y border-gray-100 reveal">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl font-bold text-center text-gray-900 mb-10">En estos escritos descubrirás:</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass-card p-8 rounded-2xl relative">
-                    <i data-lucide="quote" class="w-10 h-10 text-brand-terracotta/20 absolute top-4 left-4"></i>
-                    <p class="text-gray-700 italic relative z-10 mb-6">"Leer sus artículos cambió por completo la dinámica en nuestra casa. Volvimos a reír en la cocina y a cenar juntos."</p>
-                    <p class="font-bold text-brand-navy text-sm">- Familia Mendoza</p>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <i data-lucide="shield-check" class="w-8 h-8 text-brand-dark mb-4"></i>
+                    <h3 class="font-bold text-gray-900 mb-2">Resiliencia familiar</h3>
+                    <p class="text-sm text-gray-600">Herramientas prácticas para superar obstáculos fortaleciendo el núcleo de tu hogar.</p>
                 </div>
-                <div class="glass-card p-8 rounded-2xl relative">
-                    <i data-lucide="quote" class="w-10 h-10 text-brand-gold/20 absolute top-4 left-4"></i>
-                    <p class="text-gray-700 italic relative z-10 mb-6">"La manera en que conecta la fe con la vida diaria de los jóvenes es brillante. Nos enseñó que rezar es como hablar con un amigo."</p>
-                    <p class="font-bold text-brand-navy text-sm">- Carlos, 22 años</p>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <i data-lucide="book-open" class="w-8 h-8 text-brand-dark mb-4"></i>
+                    <h3 class="font-bold text-gray-900 mb-2">Vivencias inéditas</h3>
+                    <p class="text-sm text-gray-600">Historias nunca antes contadas sobre figuras que moldearon nuestra sociedad.</p>
                 </div>
-                <div class="glass-card p-8 rounded-2xl relative">
-                    <i data-lucide="quote" class="w-10 h-10 text-brand-sage/20 absolute top-4 left-4"></i>
-                    <p class="text-gray-700 italic relative z-10 mb-6">"Un homenaje hermoso a la historia de nuestro país a través de la figura de su padre. Cívicamente inspirador."</p>
-                    <p class="font-bold text-brand-navy text-sm">- Revista Cultural</p>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <i data-lucide="sparkles" class="w-8 h-8 text-brand-dark mb-4"></i>
+                    <h3 class="font-bold text-gray-900 mb-2">Reflexiones diarias</h3>
+                    <p class="text-sm text-gray-600">Ideas claras para aplicar en tu vida, desde rezar hasta el valor del trabajo bien hecho.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- LLAMADO A LA ACCIÓN FINAL (ESTRUCTURA 6) -->
-    <section class="py-24 bg-brand-navy text-center reveal">
-        <div class="max-w-3xl mx-auto px-6">
-            <h2 class="text-4xl font-serif font-bold text-white mb-6">Empieza a transformar tu entorno hoy</h2>
-            <p class="text-gray-300 text-lg mb-10">
-                No dejes que la rutina escriba la historia de tu familia. Sumérgete en lecturas que te darán perspectiva, paz y herramientas para construir un legado duradero.
-            </p>
-            <a href="#compra_libros" class="inline-flex items-center px-10 py-5 bg-brand-terracotta text-white rounded-full font-bold text-lg hover:bg-orange-600 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 transform duration-300">
-                Acceder a todas las publicaciones
+    <!-- LAS TRES SECCIONES PRINCIPALES (Artículos) -->
+    <section id="articulos" class="py-24 px-6 bg-white space-y-32">
+        <div class="max-w-6xl mx-auto">
+            
+            <!-- SECCIÓN 1: La Cocina -->
+            <div class="grid md:grid-cols-2 gap-12 items-center reveal mb-32">
+                <div class="order-2 md:order-1 bg-brand-light/30 rounded-2xl aspect-[4/3] flex items-center justify-center p-8">
+                    <!-- Placeholder visual, puedes poner una imagen de una cocina aquí -->
+                    <i data-lucide="chef-hat" class="w-24 h-24 text-brand-dark/50"></i>
+                </div>
+                <div class="order-1 md:order-2 space-y-6">
+                    <span class="text-brand-dark font-bold tracking-widest text-xs uppercase">El Eje del Hogar</span>
+                    <h2 class="text-3xl font-bold text-gray-900">La Cocina: Más que un lugar, un corazón abierto.</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        La cocina rompió sus paredes. Ya no es solo donde se prepara la comida, sino donde se amasan las historias de la familia. ¿Sobrevives a la rutina o te atreves a disfrutar al máximo?
+                    </p>
+                    <a href="#LINK_COCINA" class="inline-flex items-center text-sm font-bold uppercase tracking-wide text-white bg-brand-dark px-6 py-3 rounded-md hover:bg-orange-700 transition-colors">
+                        Leer "Bailar en la cocina" <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 2: Sobre Mi Padre -->
+            <div class="grid md:grid-cols-2 gap-12 items-center reveal mb-32">
+                <div class="space-y-6">
+                    <span class="text-gray-500 font-bold tracking-widest text-xs uppercase">Historia y Sociedad</span>
+                    <h2 class="text-3xl font-bold text-gray-900">El legado de un ilustre venezolano.</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Un recorrido por la vida de un hombre que marcó la historia del país. Conoce las bases de un legado de integridad, trabajo y profundo amor por Venezuela que sigue vigente en las nuevas generaciones.
+                    </p>
+                    <a href="#LINK_PADRE" class="inline-flex items-center text-sm font-bold uppercase tracking-wide text-gray-900 border-2 border-gray-900 px-6 py-3 rounded-md hover:bg-gray-900 hover:text-white transition-colors">
+                        Leer artículos sobre su obra <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+                <div class="bg-gray-100 rounded-2xl aspect-[4/3] flex items-center justify-center p-8 border border-gray-200">
+                     <i data-lucide="landmark" class="w-24 h-24 text-gray-400"></i>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 3: Se le abrieron los ojos & Hablar con Dios -->
+            <div class="reveal text-center max-w-4xl mx-auto bg-brand-bg p-10 md:p-16 rounded-3xl border border-gray-100 shadow-sm">
+                <span class="text-brand-dark font-bold tracking-widest text-xs uppercase">Espiritualidad Cotidiana</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">Y se le abrieron los ojos</h2>
+                
+                <!-- Ojos Animados -->
+                <div class="eyes-container">
+                    <div class="cute-eye"></div>
+                    <div class="cute-eye"></div>
+                </div>
+
+                <p class="text-gray-600 mb-10 max-w-2xl mx-auto">
+                    Educar la mirada para ver lo extraordinario en lo ordinario. Descubre cómo integrar la fe de manera natural, desde cómo interactuamos con el arte hasta cómo rezamos en la vida diaria.
+                </p>
+
+                <!-- Grid de Artículos (Incluye imagen provista) -->
+                <div class="grid md:grid-cols-2 gap-8 text-left">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-brand transition-colors">
+                        <img src="image_d9cb0f.png" alt="Chat de WhatsApp: ¿Quedamos hoy?" class="w-full h-32 object-cover rounded-md mb-4 border border-gray-100">
+                        <h3 class="font-bold text-gray-900 mb-2">Hablar con Dios como un amigo</h3>
+                        <p class="text-sm text-gray-600 mb-4">¿Te imaginas que tu vida entera fuera un tema de chat con tu mejor amigo?</p>
+                        <a href="https://opusdei.org/" class="text-brand-dark font-bold text-xs uppercase tracking-wide flex items-center">
+                            Leer en Opus Dei <i data-lucide="external-link" class="w-3 h-3 ml-1"></i>
+                        </a>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-brand transition-colors flex flex-col justify-center">
+                        <h3 class="font-bold text-gray-900 mb-2">El aura que no se puede farmear</h3>
+                        <p class="text-sm text-gray-600 mb-4">La luz que llevaban los santos de la vida normal. Un brillo que no depende de los likes.</p>
+                        <a href="https://opusdei.org/" class="text-brand-dark font-bold text-xs uppercase tracking-wide flex items-center">
+                            Leer en Opus Dei <i data-lucide="external-link" class="w-3 h-3 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SOBRE LA AUTORA (Retrato y Toque Humano) -->
+    <section class="py-20 px-6 bg-gray-900 text-white reveal">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-5 gap-12 items-center">
+            <div class="md:col-span-2">
+                <div class="w-full aspect-[3/4] bg-gray-800 rounded-xl overflow-hidden border-4 border-gray-700 flex items-center justify-center">
+                    <span class="text-gray-500 font-medium text-sm">[Tu Foto de Alta Calidad]</span>
+                </div>
+            </div>
+            <div class="md:col-span-3 space-y-6">
+                <h2 class="text-3xl font-bold">Sobre Beatriz</h2>
+                <p class="text-gray-300 leading-relaxed">
+                    Soy periodista, humanista y, sobre todo, una apasionada por la familia. Fuera de las páginas y los artículos, me encuentras disfrutando del bullicio de una mesa compartida o buscando la belleza en los detalles más simples del día a día.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    Creo firmemente que el hogar es el primer lugar donde cambiamos el mundo. Mi objetivo es compartir estas experiencias para que encuentres inspiración en tu propia rutina.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRUEBA SOCIAL / TESTIMONIOS -->
+    <section class="py-20 px-6 bg-brand-light/20 reveal">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl font-bold text-gray-900 mb-12">Lo que dicen los lectores</h2>
+            <div class="grid md:grid-cols-2 gap-8 text-left">
+                <div class="bg-white p-8 rounded-2xl shadow-sm relative">
+                    <i data-lucide="message-square-quote" class="absolute top-4 right-4 w-6 h-6 text-brand-light"></i>
+                    <p class="text-gray-600 italic mb-4">"Sus textos me hicieron replantearme cómo vivo mi día a día. La forma en que habla de la cocina me devolvió las ganas de reunir a mi familia."</p>
+                    <p class="font-bold text-sm text-gray-900">— María F., Lectora</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm relative">
+                    <i data-lucide="message-square-quote" class="absolute top-4 right-4 w-6 h-6 text-brand-light"></i>
+                    <p class="text-gray-600 italic mb-4">"El relato sobre su padre es una pieza histórica y profundamente humana. Un recordatorio necesario de nuestros valores como sociedad."</p>
+                    <p class="font-bold text-sm text-gray-900">— Revista Literaria</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="py-24 px-6 bg-white text-center reveal">
+        <div class="max-w-2xl mx-auto space-y-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">No dejes pasar esta lectura.</h2>
+            <p class="text-lg text-gray-600">Comienza a transformar tu visión del hogar y descubre las raíces que te anclan a lo verdaderamente importante.</p>
+            <a href="#comprar" class="inline-block px-10 py-4 bg-brand-dark text-white font-bold uppercase tracking-wide text-sm rounded-md hover:bg-orange-700 transition-colors shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                Adquirir el Libro Ahora
             </a>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm border-t border-gray-800">
-        <p>© 2026 Beatriz Briceño-Picón. Familia, Educación y Legado.</p>
+    <footer class="bg-gray-50 border-t border-gray-200 py-8 px-6 text-center">
+        <p class="text-sm text-gray-500 font-medium">© 2026 Beatriz Briceño-Picón. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- INTERACTIVITY (Vanilla JS Moderno) -->
+    <!-- Vanilla JS para Inicializar Iconos y Animación Scroll -->
     <script>
-        // Inicializar iconos de Lucide
+        // Inicializar Lucide Icons
         lucide.createIcons();
 
-        // Sistema de animaciones Reveal al hacer scroll usando Intersection Observer
-        document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.15
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target); // Solo animar una vez
-                    }
-                });
-            }, observerOptions);
-
-            const revealElements = document.querySelectorAll('.reveal');
-            revealElements.forEach(el => observer.observe(el));
-        });
+        // Lógica de aparición al hacer scroll (Reveal)
+        const reveals = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            const elementVisible = 100;
+            
+            reveals.forEach(reveal => {
+                const elementTop = reveal.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Trigger inicial
     </script>
 </body>
 </html>
