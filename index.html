@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beatriz Briceño-Picón | Familia, Historia y Juventud</title>
     
+    <!-- FAVICON BBP -->
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI0ZEQkE3NCIgcng9IjIwIi8+PHRleHQgeD0iNTAiIHk9IjY1IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNDAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjRkZGRkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5CQlA8L3RleHQ+PC9zdmc+" type="image/svg+xml">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,7 +44,7 @@
         .hide-scroll::-webkit-scrollbar { display: none; }
         .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* Animación Parpadeo - Dos Ojos Cute (Más rápido) */
+        /* Animación Parpadeo - Dos Ojos Cute (Rápido) */
         .eyes-container {
             display: flex;
             justify-content: center;
@@ -54,7 +57,6 @@
             background-color: #2D2D2D;
             border-radius: 50%;
             position: relative;
-            /* Se redujo de 4s a 2.5s para que parpadee más rápido */
             animation: blink 2.5s infinite ease-in-out;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
@@ -80,7 +82,7 @@
 </head>
 <body class="antialiased selection:bg-brand-dark selection:text-white">
 
-    <!-- HERO SECTION (Fondo Blanco) -->
+    <!-- HERO SECTION -->
     <header class="min-h-[85vh] flex items-center pt-20 pb-16 px-6 bg-white relative overflow-hidden">
         <div class="max-w-5xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
             
@@ -94,7 +96,7 @@
                     </p>
                 </div>
 
-                <!-- Cita Inspiradora (Más legible y con autor) -->
+                <!-- Cita Inspiradora -->
                 <div class="border-l-4 border-brand-dark pl-6 py-2 bg-gray-50/50 rounded-r-lg">
                     <p class="text-xl md:text-2xl font-serif text-gray-900 italic leading-relaxed font-medium">
                         "La verdadera trascendencia no se construye con grandes monumentos, sino con las historias y valores que amasamos a fuego lento, todos los días, en el centro de nuestro hogar."
@@ -132,7 +134,8 @@
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             
             <div class="order-2 md:order-1 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg group">
-                <img src="cocina-abierta.jpg" alt="Cocina de concepto abierto" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <!-- Se actualizó la extensión a .jpeg -->
+                <img src="cocina-abierta.jpeg" alt="Cocina de concepto abierto" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
 
             <div class="order-1 md:order-2 space-y-6">
@@ -230,7 +233,8 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 hide-scroll cursor-grab active:cursor-grabbing">
                 
-                <a href="https://opusdei.org/" target="_blank" class="snap-center shrink-0 w-[300px] md:w-[350px] bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 group flex flex-col">
+                <!-- Artículo 1 -->
+                <a href="https://opusdei.org/es/article/y-si-rezar-fuera-como-hablar-con-tu-mejor-amigo/" target="_blank" class="snap-center shrink-0 w-[300px] md:w-[350px] bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 group flex flex-col">
                     <div class="h-48 bg-gray-200 overflow-hidden">
                         <img src="image_d9cb0f.png" alt="Chat: Hablar con Dios" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
@@ -243,7 +247,8 @@
                     </div>
                 </a>
 
-                <a href="https://opusdei.org/" target="_blank" class="snap-center shrink-0 w-[300px] md:w-[350px] bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 group flex flex-col">
+                <!-- Artículo 2 -->
+                <a href="https://opusdei.org/es/article/el-aura-que-no-se-puede-farmear/" target="_blank" class="snap-center shrink-0 w-[300px] md:w-[350px] bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 group flex flex-col">
                     <div class="h-48 bg-gray-200 overflow-hidden">
                         <img src="farmear-aura.jpg" alt="Farmear Aura" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
@@ -256,13 +261,14 @@
                     </div>
                 </a>
 
-                <a href="https://opusdei.org/" target="_blank" class="snap-center shrink-0 w-[300px] md:w-[350px] bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 group flex flex-col">
+                <!-- Artículo 3 -->
+                <a href="https://stories.opusdei.org/web-stories/christus-vivit/" target="_blank" class="snap-center shrink-0 w-[300px] md:w-[350px] bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 group flex flex-col">
                     <div class="h-48 bg-gray-200 overflow-hidden">
-                        <img src="jovenes-futuro.jpg" alt="Jóvenes y Futuro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="christus-vivit.jpg" alt="Christus Vivit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="font-bold text-xl text-gray-900 mb-3 group-hover:text-brand-dark transition-colors">Desafiar el ruido del mundo</h3>
-                        <p class="text-gray-600 text-sm mb-6 flex-grow">Herramientas para mantener una conciencia crítica y un corazón dispuesto en la sociedad actual.</p>
+                        <h3 class="font-bold text-xl text-gray-900 mb-3 group-hover:text-brand-dark transition-colors">Del Papa a los jóvenes: Christus Vivit</h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Un mensaje directo de esperanza, fe y acción que invita a la juventud a mantenerse viva, auténtica y conectada con su propósito.</p>
                         <span class="text-xs font-bold text-gray-400 uppercase tracking-wider flex items-center mt-auto group-hover:text-brand-dark">
                             Leer en Opus Dei <i data-lucide="external-link" class="w-3 h-3 ml-2"></i>
                         </span>
