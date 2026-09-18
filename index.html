@@ -88,13 +88,13 @@
             <i data-lucide="home" class="w-5 h-5 group-hover:-translate-y-1 transition-transform"></i>
             <span class="text-[10px] font-bold uppercase hidden md:block">Inicio</span>
         </a>
-        <a href="#cocina" class="text-gray-500 hover:text-brand-dark transition-colors flex flex-col items-center gap-1 group" title="El Hogar">
-            <i data-lucide="utensils-crossed" class="w-5 h-5 group-hover:-translate-y-1 transition-transform"></i>
-            <span class="text-[10px] font-bold uppercase hidden md:block">El Hogar</span>
-        </a>
         <a href="#padre" class="text-gray-500 hover:text-brand-dark transition-colors flex flex-col items-center gap-1 group" title="Don Mario">
             <i data-lucide="landmark" class="w-5 h-5 group-hover:-translate-y-1 transition-transform"></i>
             <span class="text-[10px] font-bold uppercase hidden md:block">Don Mario</span>
+        </a>
+        <a href="#cocina" class="text-gray-500 hover:text-brand-dark transition-colors flex flex-col items-center gap-1 group" title="El Hogar">
+            <i data-lucide="utensils-crossed" class="w-5 h-5 group-hover:-translate-y-1 transition-transform"></i>
+            <span class="text-[10px] font-bold uppercase hidden md:block">El Hogar</span>
         </a>
         <a href="#juventud" class="text-gray-500 hover:text-brand-dark transition-colors flex flex-col items-center gap-1 group" title="La Juventud">
             <i data-lucide="eye" class="w-5 h-5 group-hover:-translate-y-1 transition-transform"></i>
@@ -131,8 +131,8 @@
                         Con una mirada profunda y humana, Beatriz dedica sus letras a rescatar la esencia de lo que verdaderamente importa. A través de sus artículos, nos invita a un recorrido por tres pilares fundamentales:
                     </p>
                     <ul class="font-semibold text-gray-800 space-y-2">
-                        <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-brand-dark mr-2"></i> El rescate del matrimonio y la familia.</li>
                         <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-brand-dark mr-2"></i> La memoria de su ilustre padre.</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-brand-dark mr-2"></i> El rescate del matrimonio y la familia.</li>
                         <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-brand-dark mr-2"></i> El despertar de las nuevas generaciones.</li>
                     </ul>
                 </div>
@@ -149,8 +149,50 @@
 
     <div class="max-w-6xl mx-auto px-6 py-12"><hr class="border-gray-200"></div>
 
-    <!-- SECCIÓN 1: EL HOGAR Y LA COCINA -->
-    <section id="cocina" class="py-20 px-6 bg-white reveal">
+    <!-- SECCIÓN 1: SU PADRE -->
+    <section id="padre" class="py-20 px-6 bg-brand-bg reveal">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            
+            <div class="space-y-6">
+                <span class="text-gray-500 font-bold tracking-widest text-xs uppercase">Historia Viva</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+                    El hombre ilustre que yo llamo papá.
+                </h2>
+                <p class="text-gray-600 leading-relaxed text-lg">
+                    La historia actual de Venezuela reconoce a <strong>Mario Briceño Iragorry</strong> como un pensador, ensayista y pilar fundamental de nuestra identidad nacional. Sin embargo, detrás del prócer de las letras, existía el calor del padre.
+                </p>
+                <p class="text-gray-600 leading-relaxed text-lg">
+                    Beatriz nos ofrece un acercamiento inédito. Una mirada construida desde la pasión, el cariño familiar y la admiración profunda. Aquí no solo leerás sobre un ilustre venezolano, sino sobre el ser humano que enseñó con el ejemplo el valor de la integridad y el amor a su país.
+                </p>
+
+                <div class="mt-8 space-y-4">
+                    <h3 class="font-bold text-sm text-gray-900 uppercase tracking-wide border-b border-gray-200 pb-2">Artículos sobre su obra y vida:</h3>
+                    
+                    <a href="#link-articulo" class="group flex items-center justify-between p-4 bg-white rounded-lg hover:shadow-md transition-all border border-gray-100">
+                        <div>
+                            <h4 class="font-bold text-gray-900 group-hover:text-brand-dark transition-colors">La lección cívica en la mesa del comedor</h4>
+                        </div>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-gray-400 group-hover:text-brand-dark transition-colors"></i>
+                    </a>
+                    
+                    <a href="#link-articulo" class="group flex items-center justify-between p-4 bg-white rounded-lg hover:shadow-md transition-all border border-gray-100">
+                        <div>
+                            <h4 class="font-bold text-gray-900 group-hover:text-brand-dark transition-colors">Memorias de un humanista en casa</h4>
+                        </div>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-gray-400 group-hover:text-brand-dark transition-colors"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative aspect-[3/4] bg-gray-200 rounded-2xl overflow-hidden shadow-lg border-4 border-white flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-700">
+                <img src="mario-briceno.jpg" alt="Retrato de Mario Briceño Iragorry" class="w-full h-full object-cover">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: EL HOGAR Y LA COCINA -->
+    <section id="cocina" class="py-24 px-6 bg-white border-y border-gray-100 reveal">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             
             <div class="order-2 md:order-1 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg group">
@@ -192,48 +234,6 @@
                 </div>
             </div>
             
-        </div>
-    </section>
-
-    <!-- SECCIÓN 2: SU PADRE -->
-    <section id="padre" class="py-24 px-6 bg-brand-bg border-y border-gray-100 reveal">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            
-            <div class="space-y-6">
-                <span class="text-gray-500 font-bold tracking-widest text-xs uppercase">Historia Viva</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-                    El hombre ilustre que yo llamo papá.
-                </h2>
-                <p class="text-gray-600 leading-relaxed text-lg">
-                    La historia actual de Venezuela reconoce a <strong>Mario Briceño Iragorry</strong> como un pensador, ensayista y pilar fundamental de nuestra identidad nacional. Sin embargo, detrás del prócer de las letras, existía el calor del padre.
-                </p>
-                <p class="text-gray-600 leading-relaxed text-lg">
-                    Beatriz nos ofrece un acercamiento inédito. Una mirada construida desde la pasión, el cariño familiar y la admiración profunda. Aquí no solo leerás sobre un ilustre venezolano, sino sobre el ser humano que enseñó con el ejemplo el valor de la integridad y el amor a su país.
-                </p>
-
-                <div class="mt-8 space-y-4">
-                    <h3 class="font-bold text-sm text-gray-900 uppercase tracking-wide border-b border-gray-200 pb-2">Artículos sobre su obra y vida:</h3>
-                    
-                    <a href="#link-articulo" class="group flex items-center justify-between p-4 bg-white rounded-lg hover:shadow-md transition-all border border-gray-100">
-                        <div>
-                            <h4 class="font-bold text-gray-900 group-hover:text-brand-dark transition-colors">La lección cívica en la mesa del comedor</h4>
-                        </div>
-                        <i data-lucide="arrow-right" class="w-4 h-4 text-gray-400 group-hover:text-brand-dark transition-colors"></i>
-                    </a>
-                    
-                    <a href="#link-articulo" class="group flex items-center justify-between p-4 bg-white rounded-lg hover:shadow-md transition-all border border-gray-100">
-                        <div>
-                            <h4 class="font-bold text-gray-900 group-hover:text-brand-dark transition-colors">Memorias de un humanista en casa</h4>
-                        </div>
-                        <i data-lucide="arrow-right" class="w-4 h-4 text-gray-400 group-hover:text-brand-dark transition-colors"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="relative aspect-[3/4] bg-gray-200 rounded-2xl overflow-hidden shadow-lg border-4 border-white flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-700">
-                <img src="mario-briceno.jpg" alt="Retrato de Mario Briceño Iragorry" class="w-full h-full object-cover">
-            </div>
-
         </div>
     </section>
 
